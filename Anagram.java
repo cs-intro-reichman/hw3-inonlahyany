@@ -31,6 +31,22 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		String processedStr1 = preProcess(str1);
 		String processedStr2 = preProcess(str2); 
+		
+		for (int s = 0; s < processedStr1.length(); s++) {
+			if (processedStr1.charAt(s) == 32) {
+				processedStr1 = processedStr1.substring(0, s) + processedStr1.substring(s + 1);
+		
+			}
+		}
+
+		System.out.println("INON IS ANAGRAM STRING IS " + processedStr1);
+
+		for (int s = 0; s < processedStr2.length(); s++) {
+			if (processedStr2.charAt(s) == 32) {
+				processedStr2 = processedStr2.substring(0, s) + processedStr2.substring(s + 1);
+			}
+		}
+		System.out.println("INON IS ANAGRAM STRING IS " + processedStr2);
 	
 		if (processedStr1.length() != processedStr2.length()) {
 			return false; 
@@ -61,6 +77,11 @@ public class Anagram {
 		String processedString = "";
 		for (int i = 0; i < str.length(); i++) {
 			char currentCh = str.charAt(i);
+			
+			if (currentCh == 32) {
+				processedString += currentCh;
+				continue;
+			}
 
 			if (currentCh <= 122 && currentCh >= 97) {
 				processedString += currentCh;
@@ -69,7 +90,7 @@ public class Anagram {
 				processedString += currentCh;
 			} 
 		}
-
+		System.out.println("INON PROCESSED STRING iS: " + processedString);
 		return processedString;
 	} 
 	   

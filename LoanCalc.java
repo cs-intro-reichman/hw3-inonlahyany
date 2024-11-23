@@ -38,7 +38,7 @@ public class LoanCalc {
 			// System.out.println("Period " + periodCounter + ": " + endBalance);
 			periodCounter++;
 		}
-			return (int) endBalance;
+			return endBalance;
 		}
 		// endBalance += Math.abs(0-loan);
 			
@@ -51,7 +51,7 @@ public class LoanCalc {
 		iterationCounter = 0; 
 		double optimalPayment = loan / n; 
 		double endBalanceCheck = endBalance(loan, rate, n, optimalPayment);
-		epsilon = 0.1;
+		epsilon = 0.001;
 		while (endBalanceCheck > 0) {
 			iterationCounter += 1;
 			optimalPayment += epsilon;
@@ -71,7 +71,7 @@ public class LoanCalc {
 		double theH = loan;
 		double optimalPayment = (theL + theH) / 2; 
 		double endBalanceCheck = endBalance(loan, rate, n, optimalPayment);
-		epsilon = 0.1;
+		epsilon = 0.001;
 		while ((theH - theL) >= epsilon) {
 			if (endBalance(loan, rate, n, optimalPayment) * endBalance(loan, rate, n, theL) > 0) {
 				theL = optimalPayment;
