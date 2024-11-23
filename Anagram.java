@@ -39,14 +39,12 @@ public class Anagram {
 			}
 		}
 
-		System.out.println("INON IS ANAGRAM STRING IS " + processedStr1);
 
 		for (int s = 0; s < processedStr2.length(); s++) {
 			if (processedStr2.charAt(s) == 32) {
 				processedStr2 = processedStr2.substring(0, s) + processedStr2.substring(s + 1);
 			}
 		}
-		System.out.println("INON IS ANAGRAM STRING IS " + processedStr2);
 	
 		if (processedStr1.length() != processedStr2.length()) {
 			return false; 
@@ -90,7 +88,6 @@ public class Anagram {
 				processedString += currentCh;
 			} 
 		}
-		System.out.println("INON PROCESSED STRING iS: " + processedString);
 		return processedString;
 	} 
 	   
