@@ -25,43 +25,65 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int additionResult = x1;
+		for (int i = 0; i < x2; i++) {
+			additionResult++;
+		}
+		return additionResult;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int subtractionResult = x1;
+		for (int i = 0; i < x2; i++) {
+			subtractionResult--;
+		}
+		return subtractionResult;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		// For 'x2' times, we add 'x1' to itselt. as x1 * 1 is x1, we skip an iteration by starting from i=1.
+		int multiplicationResult = x1;
+		for (int i = 1; i < x2; i++) {
+			multiplicationResult = plus(multiplicationResult, x1);
+		}
+		return multiplicationResult; 
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int powerResult = x;
+		for (int i=1; i<n; i++) {
+			powerResult = times(powerResult, x);
+		}
+		return powerResult;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int divisionResult = 0; 
+		while (x1 >= x2) {
+			x1 = minus(x1, x2);
+			divisionResult++;
+		}
+		return divisionResult;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int moduloResult = 0;
+		moduloResult = div(x1, x2);
+		moduloResult = minus(x1,times(x2,moduloResult));
+		return moduloResult;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
-		return 0;
+		int rootResult = 0;
+		while (pow(rootResult+1, 2) <= x ) {
+			rootResult++;
+		}
+		return rootResult;
 	}	  	  
 }
